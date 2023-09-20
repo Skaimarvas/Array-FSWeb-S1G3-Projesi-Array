@@ -40,9 +40,12 @@ Aşağıdakileri yapmak için aşağıdaki kopyalama işlevini kullanın:
 */
 
 
-function kopyala(/*kod buraya*/){
-  /*kod buraya*/
+function kopyala(arrKopya){
+  orijinalTatlar.copyWithin(arrKopya,0);
+  return arrKopya;
 }
+
+console.log(orijinalTatlar);
 
 
 /* Görev 2:
@@ -56,9 +59,14 @@ Bir dizinin tam olarak 25 çeşit olduğunu onaylayın. İşleviniz şunları ka
 */
 
 
-function dizi25Cesitmi(/*kod buraya*/){
-  /*kod buraya*/
+function dizi25Cesitmi(arrLength){
+  if (arrLength.length === 25) {
+    return true;
+  } else {
+    return false;
+  } 
 }
+console.log(dizi25Cesitmi(orijinalTatlar));
 
 
 /* Görev 3:
@@ -74,9 +82,12 @@ Aşağıdakileri yapmak için cesitEkle işlevini kullanın:
 */
 
 
-function cesitEkle(/*kod buraya*/){
-  /*kod buraya*/
-}
+function cesitEkle(arr,yenitad){
+  arr.unshift(yenitad);
+  return arr;
+  }
+
+console.log(cesitEkle(orijinalTatlar,"Kakule"))
 
 
 /* Cörev 4:
@@ -92,10 +103,12 @@ Aşağıdakileri yapmak için sonCesitiKaldir işlevini kullanın:
 */
 
 
-function sonCesitiKaldir(/*kod buraya*/){
-  /*kod buraya*/
+function sonCesitiKaldir(arr,sonitemkaldir){
+  arr.pop(sonitemkaldir);
+  return arr;
 }
 
+console.log(sonCesitiKaldir(orijinalTatlar))
 
 /* Görev 5:
 Dizideki belirli bir indeksteki çeşniyi döndüren bir işlev yazın.
@@ -108,10 +121,12 @@ Aşağıdakileri yapmak için aşağıdaki indekstekiCesitiGetir işlevini kulla
    Örneğin: indekstekiCesitiGetir(orijinalTatlar, 2) çalıştırılmasıyla, Kakule'in başarıyla eklendiği varsayarsak sonuç "Ceviz" olucaktır.
 */
 
-function indekstekiCesitiGetir(/*kod buraya*/){
-  /*kod buraya*/
+function indekstekiCesitiGetir(arr,index){
+  arr[index];
+  return arr[index];
 }
 
+console.log(indekstekiCesitiGetir(orijinalTatlar,4))
 
 /* Görev 6:
 
@@ -128,10 +143,12 @@ Aşağıdakileri yapmak için ismeGoreCesitCikar işlevini kullanın:
   İPUCU: Bunun için .splice() kullanabilirsiniz.
 */
 
-function ismeGoreCesitCikar(/*kod buraya*/){
-  /*kod buraya*/
+function ismeGoreCesitCikar(arr,lezzetad){
+  arr.splice(lezzetad,1);
+  return arr;
 }
-
+console.log(ismeGoreCesitCikar(orijinalTatlar,2));
+console.log(orijinalTatlar);
 
 /* Görev 7:
 
