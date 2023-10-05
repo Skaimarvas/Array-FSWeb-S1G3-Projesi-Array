@@ -191,9 +191,39 @@ Aşağıdakileri yapmak için ortalamaKelimeSayisi işlevini kullanın:
    Örneğin: ortalamaKelimeSayisi(orijinalTatlar) 0 ile 2 arasında bir sayı döndürmelidir.
 */
 
-function ortalamaKelimeSayisi(/*kod buraya*/) {
-  /*kod buraya*/
+// function ortalamaKelimeSayisi(arametre) {
+//   let kelimeSayilari = [];
+//   for (let i = 0; i < arametre.length; i++) {
+//     let kelimeDizisi = arametre[i].split("");
+//     let kelimeSayisi = kelimeDizisi.length;
+//     kelimeSayilari.push(kelimeSayisi);
+//   }
+
+//   let toplamkelimeSayisi = 0;
+//   for (let i = 0; i < kelimeSayilari.length; i++) {
+//     toplamkelimeSayisi += kelimeSayilari[i];
+//   }
+
+//   let ortalamaKelimeadedi = toplamkelimeSayisi / kelimeSayilari.length;
+//   return {
+//     kelimeSayilari: kelimeSayilari,
+//     ortalamaKelimeadedi: ortalamaKelimeadedi,
+//   };
+// }
+
+function ortalamaKelimeSayisi(dizi) {
+  let dizininUzunlugu = dizi.length;
+  let toplamKelimeSayisi = 0;
+  for (let i = 0; i < dizininUzunlugu; i++) {
+    let kelimeSayisi = dizi[i].split(" ").length;
+    console.log("Kelime Sayisi", kelimeSayisi);
+    toplamKelimeSayisi += kelimeSayisi;
+  }
+  let ortalamaKelimeSayisi = toplamKelimeSayisi / dizininUzunlugu;
+  return ortalamaKelimeSayisi;
 }
+
+console.log("Alıştırma 1", ortalamaKelimeSayisi(orijinalTatlar));
 
 /* ALIŞTIRMA 2:
 Firma mevcut tatların yanında artık mevsimlik lezzetler ve hatta bölgesel lezzetler de sunmaktadır. Toplam 25 lezzet aromasını
@@ -207,9 +237,62 @@ Aşağıdakileri yapmak için rastgeleTatlar işlevini ve yeni dizileri kullanı
   Örneğin: rastgeleTatlar(orijinalTatlar, yeniTatlar, mevsimlikTatlar, bolgeselTatlar) çalıştırıldığında ["Kestane", "Ballı Badem,"..."Hindistan Cevizi", "Kuru üzüm"].
 */
 
-function rastgeleTatlar(/*kod buraya*/) {
-  /*kod buraya*/
+const yeniTatlar = [
+  "Badem",
+  "Ballı Badem",
+  "Fıstık Ezmesi",
+  "Profiterol",
+  "Madlen Çikolata",
+];
+
+const mevsimlikTatlar = [
+  "Pekan",
+  "Kaju",
+  "Çikolatalı Mousse",
+  "Fransız Vanilyası",
+  "Yumurta",
+  "Alman çikolatası",
+  "Kek üzerine krema",
+  "Hindistan Cevizi",
+  "Kaymaklı Biskuvi",
+  "Beyaz Çikolata",
+  "Mango",
+];
+
+const bolgeselTatlar = [
+  "Kaymak",
+  "Karpuz",
+  "Karadut",
+  "Turunç",
+  "Portakal",
+  "Yogurt",
+  "Krem Peynir",
+  "Kakao",
+  "Karamel macchiato",
+  "Kuru üzüm",
+  "Peynir",
+  "Karamel",
+];
+
+function rastgeleTatlar(tad1, tad2, tad3, tad4) {
+  const yirmiBesCesit = [];
+  const karisik = [...tad1, ...tad2, ...tad3, ...tad4];
+
+  while (yirmiBesCesit.length < 25) {
+    const rastgeleIndex = Math.floor(Math.random() * karisik.length);
+    const rastgeleTat = karisik[rastgeleIndex];
+
+    if (!yirmiBesCesit.includes(rastgeleTat)) {
+      yirmiBesCesit.push(rastgeleTat);
+    }
+  }
+  return yirmiBesCesit;
 }
+
+console.log(
+  "Alıştırma 2",
+  rastgeleTatlar(orijinalTatlar, yeniTatlar, bolgeselTatlar, mevsimlikTatlar)
+);
 
 // NEW DATA ARRAYS FOR STRETCH 2 ⬇️
 // const yeniTatlar = [
